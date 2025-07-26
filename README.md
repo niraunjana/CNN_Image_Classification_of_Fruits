@@ -1,4 +1,4 @@
-# Image Classification of fruits :
+# Image Classification Of Fruits :
 
 ## Aim :
 
