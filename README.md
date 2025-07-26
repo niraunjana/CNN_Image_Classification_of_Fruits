@@ -1,121 +1,116 @@
 # Image Classification of fruits :
 
-## Problem Statement
+## Aim :
 
-In many real-world applications, recognizing objects from images is a critical task—especially in fields like agriculture, healthcare, retail, and surveillance. The goal of this project is to build a deep learning model that can classify fruit images into their correct categories. The challenge lies in dealing with variations in lighting, color, size, and shape of different fruits, all while ensuring the model generalizes well to unseen data.
+The aim of this project is to develop a Convolutional Neural Network (CNN) model using PyTorch to perform image classification on a real-world dataset. The objective is to explore CNN architecture, data handling, and model evaluation techniques.
 
-## Objective
+## Problem Statement :
 
-To develop a Convolutional Neural Network using PyTorch that classifies real-world fruit images with high accuracy, demonstrating the full pipeline from data preprocessing to evaluation.
+With the increasing availability of image data across domains, it becomes crucial to automate the classification of images using deep learning. This project focuses on building an efficient CNN model to classify images into multiple fruit categories. It includes data loading, preprocessing, model design, training, and performance evaluation using visual metrics.
 
-## Introduction
+## Technologies & Libraries :
 
-Image classification is the task of assigning a label to an input image. With the rise of **deep learning**, CNNs have become the go-to architecture for image-related tasks due to their ability to automatically extract spatial features and patterns.
+1. Python
 
-## This project involves:
+2. PyTorch – for model building and training
 
-1. Loading a real-world fruits dataset
-   
-2. Preprocessing and visualizing images
-   
-3. Building a CNN model from scratch
-   
-4. Training and evaluating the model
-   
-5. Displaying predictions and performance metrics
+3. Torchvision – for dataset and transformations
 
-## What is a CNN?
+4. Matplotlib & Seaborn – for visualization
 
-A **Convolutional Neural Network** is a deep learning model designed for visual data. It mimics how humans recognize patterns like edges, colors, and textures.
+5. NumPy – numerical operations
 
-## Key Components:
+6. Google Colab – for GPU-accelerated development
 
-- **Convolutional Layers**: Extract local features using filters/kernels.
-- **Activation Functions (ReLU)**: Add non-linearity.
-- **Pooling Layers**: Downsample feature maps to reduce computation.
-- **Fully Connected Layers**: Perform classification based on learned features.
-- **Softmax Layer**: Outputs probabilities for each class.
+## What is CNN?
 
-## **Example**:  
-If shown a picture of a banana, a CNN will detect yellow color, curved edges, and eventually classify it as “banana.”
+A Convolutional Neural Network (CNN) is a type of deep learning model specifically designed for processing pixel data. CNNs use layers such as convolutional, pooling, and fully connected layers to automatically and adaptively learn spatial hierarchies of features from input images.
 
-## Tools & Libraries
+### Example:
+A CNN learns to recognize a fruit by first identifying edges, then textures, and finally shapes.
 
-- **Python**
-- **PyTorch**
-- **Torchvision**
-- **Google Colab**
-- **NumPy**
-- **Matplotlib**
-- **PIL (Python Imaging Library)**
+## Why PyTorch?
 
-## Dataset Description
+1. PyTorch is a popular open-source deep learning library that provides:
 
-- **Source**: [Kaggle - moltean/fruits](https://www.kaggle.com/moltean/fruits)
-- **Type**: Image classification dataset with labeled fruit images.
-- **Format**: Directory-structured with subfolders per class.
-- **Images**: Thousands of fruit images across multiple categories.
-- **Split**: `train/`, `test/`, and `validation/`
+2. Dynamic computation graph (eager execution)
 
-## Project Workflow
+3. GPU acceleration
 
-1. Import Libraries & Setup Environment
-2. Load Dataset from Kaggle
-3. Preprocess Images
-   - Resize
-   - Normalize
-   - Convert to Tensors
-4. Visualize Data Samples
-5. Build CNN Model Using PyTorch
-6. Train the Model
-   - Define Loss Function (CrossEntropyLoss)
-   - Use Optimizer (Adam)
-   - Train for N epochs
-7. Evaluate the Model
-   - Accuracy
-   - Confusion Matrix
-   - Sample Predictions
-8. Visualize Model Performance
+4. Easy model building with torch.nn
 
-## CNN Architecture
+5. Intuitive debugging and flexibility
 
-<img width="374" height="322" alt="image" src="https://github.com/user-attachments/assets/3883ace1-b9c7-41d9-a86e-d8e22c0c32b2" />
+## Dataset Details :
 
-## Training Details
+Source: Kaggle – moltean/fruits
 
-- **Epochs**: Customizable
-- **Batch Size**: Typical values like 32 or 64
-- **Loss Function**: CrossEntropyLoss
-- **Optimizer**: Adam
-- **Learning Rate**: 0.001
-- **Evaluation Metric**: Accuracy
+Classes: Multiple fruit categories (apple, banana, etc.)
 
-## Challenges & Learnings
+Format: Image files organized into class-specific folders
 
-1. Understanding the effect of filter size, pooling, and stride
-2. Importance of normalization and tensor formatting
-3. Monitoring training loss to avoid overfitting
-4. Improving results by tuning architecture and training parameters
+## Model Architecture Summary :
 
-## Future Work
+<img width="934" height="161" alt="image" src="https://github.com/user-attachments/assets/4ad178b5-0b18-40c6-a41c-6934041dacf8" />
 
-- Add **Data Augmentation** for better generalization
-- Use **Pre-trained Models** (e.g., ResNet, VGG)
-- Deploy model using Flask or Streamlit
-- Introduce **early stopping**, **learning rate scheduling**
-- Use **transfer learning** for faster convergence
 
-## How to Run
+<img width="763" height="628" alt="image" src="https://github.com/user-attachments/assets/0858bc4a-7341-44f2-a530-bce86cd4143d" />
 
-1. Upload the Jupyter Notebook (`.ipynb`) into **Google Colab**
-2. Upload dataset ZIP or fetch from Kaggle using `kagglehub`
-3. Run each cell step-by-step
-4. Monitor training loss and accuracy
-5. View final predictions and metrics
+## Project Workflow :
 
-## Results
+1. Data Preprocessing & Loading
+Loaded dataset from Kaggle
 
-1. High accuracy on both validation and test sets
-2. Model correctly identifies various fruit classes
-3. Visualization of predictions shows strong generalization
-4. Confusion matrix illustrates class-wise performance
+Applied transforms (Resize, ToTensor, Normalize)
+
+Split into train/test
+
+2. Model Building
+Defined CNN with 2 Conv+Pooling layers
+
+Used ReLU and Softmax activations
+
+Final dense layer outputs class probabilities
+
+3. Training Loop
+Tracked training & validation loss/accuracy
+
+Used GPU (cuda) when available
+
+Printed metrics per epoch
+
+4. Evaluation & Prediction
+Evaluated model on test set
+
+Printed class-wise accuracy
+
+Displayed confusion matrix & predictions
+
+## Performance Graphs :
+
+
+<img width="739" height="404" alt="image" src="https://github.com/user-attachments/assets/b7721afd-fd08-4066-af48-b2a9e55acba2" />
+
+
+<img width="800" height="414" alt="image" src="https://github.com/user-attachments/assets/f652e8f5-4c7d-4dc9-861c-eaff66c83bca" />
+
+
+<img width="712" height="410" alt="image" src="https://github.com/user-attachments/assets/da466426-ce2f-4d39-9fd5-118b80b51ff5" />
+
+
+## Prediction and Output :
+
+
+<img width="603" height="290" alt="image" src="https://github.com/user-attachments/assets/c95c8ff9-a60e-47f7-99ec-bd20bc86eb0c" />
+
+
+<img width="976" height="665" alt="image" src="https://github.com/user-attachments/assets/9e9106a3-1d3f-466d-9452-313c7ba97d00" />
+
+
+## Result :
+
+The CNN model achieved high classification accuracy on the fruit dataset after training, with clear convergence in loss and accuracy curves. It effectively learned to distinguish between multiple image classes using PyTorch.
+
+
+
+
