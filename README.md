@@ -12,7 +12,7 @@ To develop a Convolutional Neural Network using PyTorch that classifies real-wor
 
 Image classification is the task of assigning a label to an input image. With the rise of **deep learning**, CNNs have become the go-to architecture for image-related tasks due to their ability to automatically extract spatial features and patterns.
 
-# This project involves:
+## This project involves:
 
 1. Loading a real-world fruits dataset
    
