@@ -59,32 +59,32 @@ Format: Image files organized into class-specific folders
 ## Project Workflow :
 
 1. Data Preprocessing & Loading
-Loaded dataset from Kaggle
+   - Loaded dataset from Kaggle
 
-Applied transforms (Resize, ToTensor, Normalize)
+   - Applied transforms (Resize, ToTensor, Normalize)
 
-Split into train/test
+   - Split into train/test
 
 2. Model Building
-Defined CNN with 2 Conv+Pooling layers
+   - Defined CNN with 2 Conv+Pooling layers
 
-Used ReLU and Softmax activations
+   - Used ReLU and Softmax activations
 
-Final dense layer outputs class probabilities
+   - Final dense layer outputs class probabilities
 
 3. Training Loop
-Tracked training & validation loss/accuracy
+   - Tracked training & validation loss/accuracy
 
-Used GPU (cuda) when available
+   - Used GPU (cuda) when available
 
-Printed metrics per epoch
+   - Printed metrics per epoch
 
 4. Evaluation & Prediction
-Evaluated model on test set
+   - Evaluated model on test set
 
-Printed class-wise accuracy
+   - Printed class-wise accuracy
 
-Displayed confusion matrix & predictions
+   - Displayed confusion matrix & predictions
 
 ## Performance Graphs :
 
